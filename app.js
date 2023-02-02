@@ -6,7 +6,8 @@ const messagesList = []
 
 app.use(express.static('public'))
 
-const httpServer = app.listen(8080, () => console.log('Server running on port 8080'))
+const PORT = process.env.PORT || 8080
+const httpServer = app.listen(PORT, () => console.log('Server running on port 8080'))
 httpServer.on('error', error => console.log(error))
 
 const io = new Server(httpServer)
